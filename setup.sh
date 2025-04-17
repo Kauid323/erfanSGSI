@@ -10,8 +10,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     else
        sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller device-tree-compiler liblzma-dev python-pip brotli liblz4-tool gawk aria2
     fi
-    pip install backports.lzma protobuf pycrypto
+    sudo apt update && sudo apt install -y python3-pip python3-dev liblzma-dev
+    pip3 install backports.lzma protobuf pycryptodome
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install protobuf xz brotli lz4 aria2
-    pip install backports.lzma protobuf pycrypto
+    pip3 install backports.lzma protobuf pycryptodome
 fi
